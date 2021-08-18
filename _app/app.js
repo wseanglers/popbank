@@ -80,5 +80,6 @@ function randomValueColor() {
 let closemessage = document.getElementById('close');
 closemessage.addEventListener('click',() => {
   let message = document.getElementById('message');
+  
   message.style.display = 'none';
 })
