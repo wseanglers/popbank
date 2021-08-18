@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+  <title>POPBANK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="_app/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+<div class="">
+  <div class="columns">
+    <div class="column">
+      <h1 class="header"><img class="emoji" src="_static/petting-bank.gif"> POP<span class="bankkk">BANK</span> <img class="emoji" src="_static/petting-bank.gif"></h1>
+      <p id="score">0</p><br>
+      <a class="nongbank"><center><img src="_static/nongbank.png" id="nongbank"></center></div></a>
+    </div>
+  </div>
+</div>
+
+<article class="message" id="message">
+  <div class="message-header">
+    <p>สวัสดีทุกคนนะงับ</p>
+    <button class="delete" id="close" aria-label="delete"></button>
+  </div>
+  <div class="message-body">
+    <center>
+      นี้คือเว็บคลิก <strong>POPBANK</strong> นะจ้ะ<br>
+      จัดทำโดยเพื่อนน้องแบงค์<br>
+      <strong>* เว็บอยู่ในช่วงพัฒนาและคิดว่าอีกนานกว่าจะทำ ถ้าตู่ลาออกเว็บดีขึ้นอะ *</strong>
+    </center>
+  </div>
+</article>
+
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <!-- Any other Bulma elements you want -->
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+</body>
+<script src="_app/app.js"></script>
+<audio id="myAudio">
+  <source src="_static/clicking.wav" type="audio/wav">
+</audio>
+</html>
