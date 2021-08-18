@@ -32,7 +32,9 @@ function clickMePlease() {
   //   scoreNotWow();
   // }
   text.textContent = score;
+  $('#clickcount').text(score);
   audio.play();
+  M.toast({html: '+1',displayLength: 100,classes:'rounded green'})
   localStorage.setItem('clickscore',score);
 }
 
@@ -47,12 +49,6 @@ function scoreWow() {
     nongbank.src = '_static/nongbank.png';
   },220);
 }
-// function scoreNotWow() {
-//   let text = document.getElementById('score');
-//   text.style.color = randomValueColor();
-//   text.style.transform = 'scale(1.2,1.2) rotate('+randomValueRotate(10)+'deg)';
-//   nongbank.style.transform = 'scale(1.1,1.1) rotate('+randomValueRotate(360)+'deg)';
-// }
 
 //randomvalue
 function randomValueRotate(n) {
@@ -76,10 +72,7 @@ function randomValueColor() {
   ]
   return color[Math.floor(Math.random() * color.length ) + 1];
 }
-
-let closemessage = document.getElementById('close');
-closemessage.addEventListener('click',() => {
-  let message = document.getElementById('message');
-  
-  message.style.display = 'none';
+$('#undo5').click(() => {
+  score-=6;
+  localStorage.setItem('clickscore',score);
 })

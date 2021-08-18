@@ -1,20 +1,8 @@
-html {
-  pointer-events: none;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background: yellow;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  max-height: 100%;
-  float: left;
-  width: 100%;
-  background: rgb(43, 42, 42);
+  background: rgb(43, 42, 42) !important;
   font-family: 'Kanit', sans-serif !important;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 #score {
@@ -56,13 +44,9 @@ img {
   font-size: 80px;
   color: rgb(219, 68, 219);
 }
-.message {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin-right: 20px;
-  max-width: 400px;
-  max-height: 100%;
+.score {
+  font-size: 30px;
+  font-weight: bold;
 }
 @media screen and (max-width:540px) {
   .emoji {
@@ -76,10 +60,5 @@ img {
   }
   .bankkk {
     font-size: 55px;
-  }
-  .message {
-    margin: auto;
-    left: 0;
-    /* display: none; */
   }
 }

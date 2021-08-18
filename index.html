@@ -14,20 +14,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="_app/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-<div class="">
+<div class="ui">
   <div class="columns">
     <div class="column">
       <h1 class="header"><img class="emoji" src="_static/petting-bank.gif"> POP<span class="bankkk">BANK</span> <img class="emoji" src="_static/petting-bank.gif"></h1>
+      <center>
+        <a class="waves-effect waves-light btn modal-trigger" href="#shop">Shop</a>
+      </center>
       <p id="score">0</p><br>
       <a class="nongbank"><center><img src="_static/nongbank.png" id="nongbank"></center></div></a>
     </div>
   </div>
 </div>
 
-<article class="message" id="message">
+<!-- <article class="message" id="message">
   <div class="message-header">
     <p>สวัสดีทุกคนนะงับ</p>
     <button class="delete" id="close" aria-label="delete"></button>
@@ -39,18 +43,24 @@
       <strong>* เว็บอยู่ในช่วงพัฒนาและคิดว่าอีกนานกว่าจะทำ ถ้าตู่ลาออกเว็บดีขึ้นอะ *</strong>
     </center>
   </div>
-</article>
+</article> -->
 
-<div class="modal">
-  <div class="modal-background"></div>
+<div id="shop" class="modal">
   <div class="modal-content">
-    <!-- Any other Bulma elements you want -->
+    <h4>Shop POPBANK</h4>
+    <h5>จำนวน POP <span id="clickcount" class="score"></span></h5>
+    <p>รอก่อนขี้เกียจทำอยู่</p>
+    <a class="waves-effect waves-light btn-large" id="undo5">จำนวน POP ลดครั้งละ 5 </a>
   </div>
-  <button class="modal-close is-large" aria-label="close"></button>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
 </div>
 
 </body>
 <script src="_app/app.js"></script>
+<script src="_app/init.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <audio id="myAudio">
   <source src="_static/clicking.wav" type="audio/wav">
 </audio>
