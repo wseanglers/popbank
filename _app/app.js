@@ -1,5 +1,6 @@
 //initialscore
 let score = 0;
+let scorenow = 0;
 
 //localStorage
 if(!isNaN(localStorage.clickscore)) {
@@ -24,6 +25,7 @@ document.addEventListener('click',clickMePlease);
 document.addEventListener('keyup',clickMePlease);
 function clickMePlease() {
   score += 1;
+  scorenow += 1;
   let text = document.querySelector('#score');
   scoreWow();
   // if(score % 2 === 0) {
@@ -107,3 +109,10 @@ function checkPOPCost (cost) {
   }
   return true;
 } 
+
+setInterval(() => {
+  $.post('http://play.symonhoiji.com:3000/test/increase', {popbankcountinyourarea:scorenow})
+    .done(() => {
+      scorenow = 0;
+    })
+},5000)
