@@ -35,7 +35,6 @@ function clickMePlease() {
   $('#clickcount').text(score);
   audio.play();
   M.toast({html: '+1',displayLength: 100,classes:'rounded green'})
-  localStorage.setItem('clickscore',score);
 }
 
 //style text
@@ -49,7 +48,9 @@ function scoreWow() {
     nongbank.src = '_static/nongbank.png';
   },220);
 }
-
+function increasePop (n) {
+  score += n;
+}
 //randomvalue
 function randomValueRotate(n) {
   let tmp = Math.floor(Math.random() * 2);
@@ -73,6 +74,36 @@ function randomValueColor() {
   return color[Math.floor(Math.random() * color.length ) + 1];
 }
 $('#undo5').click(() => {
-  score-=6;
-  localStorage.setItem('clickscore',score);
+  let cost = 5
+  if(!checkPOPCost(cost)){
+    return;
+  }
+  score-=cost;
 })
+
+$('#x210s').click(() => {
+  let cost = 200;
+
+  if(!checkPOPCost(cost)){
+    return;
+  }
+  score-=cost;
+
+  var x2 = setInterval(() => {
+    document.addEventListener('click',increasePop(2));
+    document.addEventListener('keyup',increasePop(2));
+  }, 10000);
+  setTimeout(()=> {clearInterval(x2)},10100);
+})
+
+setInterval(() => {
+  localStorage.setItem('clickscore',score);
+},1000)
+
+function checkPOPCost (cost) {
+  if(score - cost < 0) {
+    M.toast({html: 'Your POP is less than cost',classes:'rounded red'})
+    return false;
+  }
+  return true;
+} 
